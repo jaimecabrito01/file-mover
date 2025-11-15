@@ -7,14 +7,14 @@ import (
 )
 
 type Paths struct {
-	Downloads  string
-	images     string
-	videos     string
-	musics     string
-	documentos string
+	Downloads  string `json:"download"`
+	images     string `json:"images"`
+	videos     string `json:"videos"`
+	musics     string `json:"musics"`
+	documentos string `json:"documents"`
 }
 
-func NewPath(Downloads string, images string, videos string, musics string, documentos string) (*Paths, error) {
+func NewConfig(Downloads string, images string, videos string, musics string, documentos string) {
 	path := Paths{
 		Downloads:  Downloads,
 		images:     images,
@@ -23,10 +23,9 @@ func NewPath(Downloads string, images string, videos string, musics string, docu
 	}
 	pathJson, err := json.Marshal(path)
 	if err != nil {
-		return &path, err
+		fmt.Println("Erro")
 
 	}
 	os.WriteFile("config.json", pathJson, 0644)
-	return &path, err
 
 }
