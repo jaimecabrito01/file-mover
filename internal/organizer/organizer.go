@@ -29,7 +29,7 @@ func LoadConfig() (string, string, string, string, string, error) {
 }
 
 
-func Move(path *string,new *string){
+func Move(path string,new string){
 
-	os.Rename(*path,*new)
+	os.Rename(path,new)
 }

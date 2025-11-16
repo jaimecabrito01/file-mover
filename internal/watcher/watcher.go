@@ -1,7 +1,6 @@
 package watcher
 
 import (
-	"fmt"
 	"log"
 
 	"path/filepath"
@@ -44,22 +43,22 @@ go func(){
 			ext := filepath.Ext(event.Name)
 				for _, extVideo := range entities.VideoExtensions{
 					if ext == string(extVideo){
-						organizer.Move(&event.Name,&videos)
+						organizer.Move(event.Name,videos)
 					}
 				}
 				for _, extDocs := range entities.DocumentExtensions{
 					if ext == string(extDocs){
-						organizer.Move(&event.Name,&documents)
+						organizer.Move(event.Name,documents)
 					}
 				}
 				for _, extMusic := range entities.MusicExtensions{
 					if ext == string(extMusic){
-						organizer.Move(&event.Name,&musics)
+						organizer.Move(event.Name,musics)
 					}
 				}
 				for _,extImages := range entities.ImageExtensions{
 					if ext == string(extImages){
-						organizer.Move(&event.Name,&images)
+						organizer.Move(event.Name,images)
 					}
 				}
 			
