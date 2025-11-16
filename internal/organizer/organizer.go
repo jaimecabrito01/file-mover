@@ -8,7 +8,6 @@ import (
 
 func LoadConfig() (string, string, string, string, string, error) {
 
-	// Lê o arquivo config.json
 	data, err := os.ReadFile("../../config.json")
 	if err != nil {
 		return "", "", "", "", "", err
@@ -20,7 +19,6 @@ func LoadConfig() (string, string, string, string, string, error) {
 		return "", "", "", "", "", err
 	}
 
-	// Pega os valores do mapa como string
 	downloads, _ := m["downloads"].(string)
 	musics, _ := m["musics"].(string)
 	videos, _ := m["videos"].(string)
@@ -31,8 +29,7 @@ func LoadConfig() (string, string, string, string, string, error) {
 }
 
 
-func MoveVideo(path *string,new *string){
+func Move(path *string,new *string){
 
 	os.Rename(*path,*new)
-
 }
