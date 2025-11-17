@@ -3,29 +3,34 @@ package entities
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 )
 
 type Paths struct {
 	Downloads  string `json:"download"`
-	images     string `json:"images"`
-	videos     string `json:"videos"`
-	musics     string `json:"musics"`
-	documentos string `json:"documents"`
+	Images     string `json:"images"`
+	Videos     string `json:"videos"`
+	Musics     string `json:"musics"`
+	Documents string `json:"documents"`
 }
 
 func NewConfig(Downloads string, images string, videos string, musics string, documentos string) {
 	path := Paths{
 		Downloads:  Downloads,
-		images:     images,
-		musics:     musics,
-		documentos: documentos,
+		Images:     images,
+		Videos: videos,
+		Musics:     musics,
+		Documents: documentos,
 	}
 	pathJson, err := json.Marshal(path)
 	if err != nil {
 		fmt.Println("Erro")
 
 	}
-	os.WriteFile("config.json", pathJson, 0644)
+	er := os.WriteFile("config.json", pathJson, 0644)
+	if err != nil{
+		log.Fatal(er)
+	}
 
 }

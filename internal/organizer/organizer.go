@@ -2,13 +2,14 @@ package organizer
 
 import (
 	"encoding/json"
-	
+	"fmt"
+
 	"os"
 )
 
 func LoadConfig() (string, string, string, string, string, error) {
 
-	data, err := os.ReadFile("../../config.json")
+	data, err := os.ReadFile("/home/jaime/go-projects/daemon/config.json")
 	if err != nil {
 		return "", "", "", "", "", err
 	}
@@ -31,5 +32,8 @@ func LoadConfig() (string, string, string, string, string, error) {
 
 func Move(path string,new string){
 
-	os.Rename(path,new)
+	err :=os.Rename(path,new)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
