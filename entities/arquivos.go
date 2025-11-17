@@ -19,7 +19,7 @@ func NewConfig(Downloads string, images string, videos string, musics string, do
 	path := Paths{
 		Downloads:  Downloads,
 		Images:     images,
-		Videos: videos,
+		Videos:    videos,
 		Musics:     musics,
 		Documents: documentos,
 	}
