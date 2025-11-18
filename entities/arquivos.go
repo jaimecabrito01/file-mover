@@ -15,15 +15,17 @@ type Paths struct {
 	Documents string `json:"documents"`
 }
 
-func NewConfig(Downloads string, images string, videos string, musics string, documentos string) {
-	path := Paths{
+func NewConfig(path *Paths) {
+	/* path := Paths{
 		Downloads:  Downloads,
 		Images:     images,
 		Videos:    videos,
 		Musics:     musics,
 		Documents: documentos,
 	}
-	pathJson, err := json.Marshal(path)
+	*/
+
+	pathJson, err := json.Marshal(*path)
 	if err != nil {
 		fmt.Println("Erro")
 

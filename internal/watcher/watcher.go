@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"strings"
-	"time"
+	
 
 	"path/filepath"
 
@@ -47,7 +47,6 @@ func Watcher() {
 					ext := filepath.Ext(event.Name)
 					for _, extVideo := range entities.VideoExtensions {
 						if ext == string(extVideo) {
-							time.Sleep(200 * time.Millisecond)
 							organizer.Move(event.Name, videos)
 						}
 					}
