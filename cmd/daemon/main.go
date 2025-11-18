@@ -10,19 +10,15 @@ import (
 
 func main() {
 	home, _ := os.UserHomeDir()
-	
 
-	pat  := entities.Paths {
+	pat := entities.Paths{
 		Downloads: filepath.Join(home, "Downloads"),
-		Images: filepath.Join(home, "Imagens"),
-		Videos: filepath.Join(home, "Vídeos"),
-		Musics: filepath.Join(home, "Músicas"),
-		Documents: filepath.Join(home, "Docuementos"),
-
+		Images:    filepath.Join(home, "Imagens"),
+		Videos:    filepath.Join(home, "Vídeos"),
+		Musics:    filepath.Join(home, "Músicas"),
+		Documents: filepath.Join(home, "Documentos"),
 	}
 
-	
 	entities.NewConfig(&pat)
 	watcher.Watcher()
-
 }

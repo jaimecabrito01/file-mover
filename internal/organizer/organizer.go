@@ -3,14 +3,19 @@ package organizer
 import (
 	"encoding/json"
 	"fmt"
-	"path/filepath"
-"io"
+	"io"
 	"os"
+	"path/filepath"
 )
 
 func LoadConfig() (string, string, string, string, string, error) {
-
-	data, err := os.ReadFile("/home/jaime/go-projects/daemon/config.json")
+	ex, err := os.Executable()
+	if err != nil {
+		return "", "", "", "", "", err
+	}
+	exPath := filepath.Dir(ex)
+	path := filepath.Join(exPath, "config.json")
+	data, err := os.ReadFile(path)
 	if err != nil {
 		return "", "", "", "", "", err
 	}
@@ -32,7 +37,7 @@ func LoadConfig() (string, string, string, string, string, error) {
 
 func Move(srcPath string, destDir string) {
 	if _, err := os.Stat(destDir); os.IsNotExist(err) {
-		os.MkdirAll(destDir, 0755)
+		os.MkdirAll(destDir, 0o755)
 	}
 
 	fileName := filepath.Base(srcPath)
@@ -70,3 +75,4 @@ func Move(srcPath string, destDir string) {
 
 	fmt.Println("Movido para:", destPath)
 }
+
