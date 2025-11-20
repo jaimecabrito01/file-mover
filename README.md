@@ -3,8 +3,8 @@
 Um movimentador de arquivos que organiza seus downloads.
 - Pega qualquer arquivo novo na pasta de downloads e move para outra de acordo com seu tipo
   Ex: se for .mp4 -> /Videos
-- Funciona por enquanto num padrão bem simples de pasta
-- Em breve podera escolher onde quer organizar,e definir ate uma quantidade de pastas que quer organizar
+
+
 ## Índice
 
 - [Instalação](#instalação)
