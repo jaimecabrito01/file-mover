@@ -15,6 +15,10 @@ Um movimentador de arquivos que organiza seus downloads.
 - [Autores](#autores)
 
 ## Instalação
+Antes de fazer a instalação recomendo baixar o Go para testar a aplicação
+
+
+[Golang](https://go.dev/doc/install)
 
 Clone o repositório:
 
