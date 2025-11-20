@@ -32,12 +32,11 @@ chmod +x install.sh
 
 Para desinstalar:
 ```bash
-```
 chmod +x uninstall.sh  
 ./uninstall.sh
 ```
 
-```
+
 ## Uso
 
 ```bash
