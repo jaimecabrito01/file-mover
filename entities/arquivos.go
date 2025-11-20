@@ -2,7 +2,6 @@ package entities
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -28,7 +27,7 @@ func NewConfig(path *Paths) {
 
 	pathJson, err := json.Marshal(*path)
 	if err != nil {
-		fmt.Println("Erro")
+		log.Fatal(err)
 	}
 	ex, _ := os.Executable()
 	exPath := filepath.Dir(ex)
