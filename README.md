@@ -1,4 +1,4 @@
-# FileMover Version 1.0.0 !!!
+# FileMover Version 1.0.0
 
 Um movimentador de arquivos que organiza seus downloads.
 - Pega qualquer arquivo novo na pasta de downloads e move para outra de acordo com seu tipo
@@ -23,27 +23,27 @@ git clone https://github.com/jaimecabrito01/separador-arquivos-service.git
 cd separador-arquivos-service
 ```
 
-Instale as dependências:
+Instale:
 
 ```bash
-go mod tidy
+chmod +x install.sh 
+./install.sh
 ```
 
+Para desinstalar:
+```bash
+```
+chmod +x uninstall.sh  
+./uninstall.sh
+```
+
+```
 ## Uso
 
-Execute o programa principal:
-
 ```bash
-go run main.go
-```
-Ou compile para binário:
-
-```bash
-go build -o meu-app main.go
-./meu-app
+filemover --setup
 ```
 
-Adapte as instruções acima conforme a estrutura do seu projeto.
 
 ## Configuração
 
