@@ -9,12 +9,9 @@ import (
 )
 
 func LoadConfig() (string, string, string, string, string, error) {
-	ex, err := os.Executable()
-	if err != nil {
-		return "", "", "", "", "", err
-	}
-	exPath := filepath.Dir(ex)
-	path := filepath.Join(exPath, "config.json")
+	configHome, _ := os.UserConfigDir()
+	path := filepath.Join(configHome, "filemover", "config.json")
+
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return "", "", "", "", "", err
@@ -75,4 +72,3 @@ func Move(srcPath string, destDir string) {
 
 	fmt.Println("Movido para:", destPath)
 }
-

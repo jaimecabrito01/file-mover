@@ -15,26 +15,24 @@ type Paths struct {
 	Documents string `json:"documents"`
 }
 
-func NewConfig(path *Paths) {
-	/* path := Paths{
-		Downloads:  Downloads,
-		Images:     images,
-		Videos:    videos,
-		Musics:     musics,
-		Documents: documentos,
-	}
-	*/
-
-	pathJson, err := json.Marshal(*path)
+func NewConfig(path *Paths) error {
+	data, err := json.MarshalIndent(path, "", "  ")
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
-	ex, _ := os.Executable()
-	exPath := filepath.Dir(ex)
-	config := filepath.Join(exPath, "config.json")
+	configDir, err := os.UserConfigDir()
+	if err != nil {
+		return err
+	}
+	dir := filepath.Join(configDir, "filemover")
+	if err := os.MkdirAll(dir, 0o755); err != nil {
+		return err
+	}
+	configPath := filepath.Join(dir, "config.json")
 
-	er := os.WriteFile(config, pathJson, 0o644)
+	er := os.WriteFile(configPath, data, 0o644)
 	if err != nil {
 		log.Fatal(er)
 	}
+	return nil
 }
