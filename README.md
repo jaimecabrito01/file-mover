@@ -19,8 +19,8 @@ Um movimentador de arquivos que organiza seus downloads.
 Clone o repositório:
 
 ```bash
-git clone https://github.com/jaimecabrito01/separador-arquivos-service.git
-cd separador-arquivos-service
+git clone https://github.com/jaimecabrito01/file-mover.git
+cd file-mover
 ```
 
 Instale:
