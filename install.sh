@@ -7,9 +7,6 @@ SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME.service"
 
 echo ">>> Instalando $SERVICE_NAME ..."
 
-echo ">>> Compilando binário..."
-go build -o $BINARY_NAME ./cmd/daemon/main.go
-
 echo ">>> Movendo binário para $INSTALL_DIR..."
 sudo mv $BINARY_NAME $INSTALL_DIR/
 
