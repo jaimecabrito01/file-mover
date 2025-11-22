@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 
-	"github.com/jaimecabrito01/separador-arquivos-service/internal/tela"
+	"github.com/jaimecabrito01/separador-arquivos-service/internal/cli"
 	"github.com/jaimecabrito01/separador-arquivos-service/internal/watcher"
 )
 
@@ -12,7 +12,7 @@ func main() {
 	flag.Parse()
 
 	if *setup {
-		tela.Init()
+		cli.Init()
 		return
 	}
 
